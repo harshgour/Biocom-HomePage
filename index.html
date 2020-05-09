@@ -62,17 +62,6 @@
                 transform: rotateX(0deg);
             }
         }
-        .letterDrop {
-            font-size: 3.8rem;
-            color: white;
-            font-family: Roboto;
-            position: relative;
-            display: inline-block;
-            text-align: center;
-            opacity: 0.8;
-            transform: rotateX(-90deg);
-            animation: letterDrop 1.2s ease 1 normal forwards;
-        }
         .button-car{
             background: rgb(2,216,113);
             display: inline-block;
@@ -89,7 +78,31 @@
         .button-car:hover{
             opacity: 0.7;
         }
+        .typewriter h1 {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            font-size: 3.8rem;
+            color: white;
+            border-right: 2px solid white;
+            font-family: Roboto;
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            animation: 
+                typing 3.5s steps(40, end) forwards,
+                blink-caret .75s step-end infinite;
+        }
 
+
+            /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+            /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white; }
+        }
         @keyframes button-up{
             0%{
                 opacity: 0.5;
@@ -100,9 +113,6 @@
             }
         }
         @media(max-width:768px){
-            .letterDrop{
-                font-size: 1.5rem;
-            }
             .flip{
                 font-size: 1rem;
             }
@@ -111,21 +121,8 @@
                 font-size: 0.9rem;
                 padding: 3px 15px;
             }
-        }
-        @keyframes letterDrop {
-            10% {
-                opacity: 0.5;
-                top: -3.75em;
-            }
-            20% {
-                opacity: 0.8;
-                top: -3.75em;
-                transform: rotateX(-360deg);
-            }
-            100% {
-                opacity: 1;
-                top: 0;
-                transform: rotateX(360deg);
+            .typewriter h1{
+                font-size: 1.5rem;
             }
         }
         @media(max-width:760px){
@@ -614,7 +611,10 @@
                         <div style="height: 100vh; background-image: url(img1/laboratory.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
                             <div class="drop-div d-flex justify-content-center align-items-center" style="flex-direction: column;">
                                 <span class="flip">Opportunities to Explore Different Domains in Biology.</span>
-                                <span class="drop">BioCom Welcomes You</span>
+                                <!--<span class="drop">BioCom Welcomes You</span>-->
+                                <div class="typewriter">
+                                    <h1>BioCom Welcomes You.</h1>
+                                </div>
                             </div>
                         </div>
                       </div>
@@ -622,7 +622,9 @@
                         <div style="height: 100vh; background-image: url(img1/25323867_10209974978440526_1907667161_n.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
                             <div class="drop-div d-flex justify-content-center align-items-center" style="flex-direction: column;">
                                 <span class="flip">Mentor programs into understanding and conducting research.</span>
-                                <span class="drop">Read | Research | Innovative</span>
+                                <div class="typewriter">
+                                    <h1>Read | Research | Innovate</h1>
+                                </div>
                             </div>
                         </div>
                         <!--<img src="img1/25323867_10209974978440526_1907667161_n.jpg" class="d-block w-100" alt="...">-->
@@ -631,7 +633,9 @@
                         <div style="height: 100vh; background-image: url(img1/25323867_10209974978440526_1907667161_n.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
                             <div class="drop-div d-flex justify-content-center align-items-center" style="flex-direction: column;">
                                 <span class="flip">Chances to actively Collab with various existing Biotech Companies.</span>
-                                <span class="drop">We are Team of Professionals.</span>
+                                <div class="typewriter">
+                                    <h1>We are a team of Professionals.</h1>
+                                </div>
                             </div>
                         </div>
                       </div>
@@ -1139,74 +1143,73 @@ Footer-6 -->
             pause: true,
             touch: true
         });
-
         $('.nav-item').click(function(){
             $('.nav-item').removeClass('active');
             $(this).addClass('active');
         })
-$.fn.letterDrop = function() {
-  // Chainability
-  return this.each( function() { 
+// $.fn.letterDrop = function() {
+//   // Chainability
+//   return this.each( function() { 
   
-  var obj = $( this );
+//   var obj = $( this );
   
-  var drop = {
-    arr : obj.text().split( '' ),
+//   var drop = {
+//     arr : obj.text().split( '' ),
     
-    range : {
-      min : 1,
-      max : 9
-    },
+//     range : {
+//       min : 1,
+//       max : 9
+//     },
     
-    styles : function() {
-      var dropDelays = '\n', addCSS;
+//     styles : function() {
+//       var dropDelays = '\n', addCSS;
       
-       for ( i = this.range.min; i <= this.range.max; i++ ) {
-         dropDelays += '.ld' + i + ' { animation-delay: 1.' + i + 's; }\n';  
-       }
+//        for ( i = this.range.min; i <= this.range.max; i++ ) {
+//          dropDelays += '.ld' + i + ' { animation-delay: 1.' + i + 's; }\n';  
+//        }
       
-        addCSS = $( '<style>' + dropDelays + '</style>' );
-        $( 'head' ).append( addCSS );
-    },
+//         addCSS = $( '<style>' + dropDelays + '</style>' );
+//         $( 'head' ).append( addCSS );
+//     },
     
-    main : function() {
-      var dp = 0;
-      obj.text( '' );
+//     main : function() {
+//       var dp = 0;
+//       obj.text( '' );
       
-      $.each( this.arr, function( index, value ) {
+//       $.each( this.arr, function( index, value ) {
 
-        dp = dp.randomInt( drop.range.min, drop.range.max );
+//         dp = dp.randomInt( drop.range.min, drop.range.max );
         
-        if ( value === ' ' )
-          value = '&nbsp'; //Add spaces
+//         if ( value === ' ' )
+//           value = '&nbsp'; //Add spaces
         
-          obj.append( '<span class="letterDrop ld' + dp + '">' + value + '</span>' );
+//           obj.append( '<span class="letterDrop ld' + dp + '">' + value + '</span>' );
         
-      });
+//       });
           
-    }
-  };
+//     }
+//   };
    
-  Number.prototype.randomInt = function ( min, max ) {
-    return Math.floor( Math.random() * ( max - min + 1 ) + min );
-  };
+//   Number.prototype.randomInt = function ( min, max ) {
+//     return Math.floor( Math.random() * ( max - min + 1 ) + min );
+//   };
   
   
-  // Create styles
-  drop.styles();
+//   // Create styles
+//   drop.styles();
 
 
-    // Initialise
-    drop.main();
-  });
+//     // Initialise
+//     drop.main();
+//   });
 
-};
+// };
 
-(jQuery);
+// (jQuery);
 
 
-// USAGE
-$( '.drop' ).letterDrop();
+// // USAGE
+// $( '.drop' ).letterDrop();
 
     </script>
     
