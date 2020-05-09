@@ -87,15 +87,18 @@
             white-space: nowrap; /* Keeps the content on a single line */
             margin: 0 auto; /* Gives that scrolling effect as the typing happens */
             animation: 
-                typing 3.5s steps(40, end) forwards,
+                typing 6s steps(40, end) forwards,
                 blink-caret .75s step-end infinite;
         }
 
 
             /* The typing effect */
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            0% { width: 0 }
+            40% { width: 100% }
+            50% { width: 100%;}
+            60% { width: 100%; }
+            100% { width: 0 }
         }
 
             /* The typewriter cursor effect */
@@ -630,7 +633,7 @@
                         <!--<img src="img1/25323867_10209974978440526_1907667161_n.jpg" class="d-block w-100" alt="...">-->
                       </div>
                       <div class="carousel-item">
-                        <div style="height: 100vh; background-image: url(img1/25323867_10209974978440526_1907667161_n.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
+                        <div style="height: 100vh; background-image: url(img1/Laboratory-Medicine.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
                             <div class="drop-div d-flex justify-content-center align-items-center" style="flex-direction: column;">
                                 <span class="flip">Chances to actively Collab with various existing Biotech Companies.</span>
                                 <div class="typewriter">
@@ -1139,7 +1142,7 @@ Footer-6 -->
         }
 
         $('#carousel').carousel({
-            interval: 10000,
+            interval: 6000,
             pause: true,
             touch: true
         });
