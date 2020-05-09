@@ -27,6 +27,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/fontawesome.min.js">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
     <style>
         figure{
@@ -79,7 +80,7 @@
             border-radius: 5px;
             position: absolute;
             z-index: 1000;
-            top: 60%;
+            top: 64%;
             left: 50%;
             padding: 7px 15px;
             transform: translate(-50%, -50%);
@@ -108,7 +109,7 @@
             .button-car{
                 top: 62%;
                 font-size: 0.9rem;
-                padding: 2px 10px;
+                padding: 3px 15px;
             }
         }
         @keyframes letterDrop {
@@ -127,7 +128,11 @@
                 transform: rotateX(360deg);
             }
         }
-        
+        @media(max-width:760px){
+            .fixed .header-sticky{
+                padding: 0px 2px 0 10px!important;
+            }
+        }
         
         .btn:focus{
             box-shadow: none;
@@ -201,6 +206,7 @@
         .header-sticky{
             opacity: 0;
             visibility: hidden;
+            box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.7);
         }
         .fixed .header-sticky{
             position: fixed;
@@ -320,7 +326,9 @@
         }
         .short-nav{
             z-index: 1000000;
-            background-color: black;
+            background-image: url(img1/black.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
             align-items: center;
             justify-content: center;
             font-size: 35px;
@@ -436,6 +444,9 @@
         .link-logo:hover a{
             color: white;
         }
+        .titlee::before{
+            left: 5%;
+        }
     </style>
 </head>
 <script>
@@ -464,8 +475,10 @@
         <ul>
             <li><a class="title" href="#home"  onclick="closenav()">Home</a></li>
             <li><a class="title" href="#aboutus" onclick="closenav()">About Us</a></li>
-            <li><a class="title" href="#team" onclick="closenav()">Our team</a></li>
             <li><a class="title" href="#domains" onclick="closenav()">Domains</a></li>
+            <li><a class="title" href="#team" onclick="closenav()">Team</a></li>
+            <li><a class="title" href="#testimonial" onclick="closenav()">Our Articles</a></li>
+            <li><a class="title" href="#contact" onclick="closenav()">Contact Us</a></li>
         </ul>
     </div>
 <!-- loading -->
@@ -483,7 +496,6 @@
                         <figure class="brand">
                             <a href="#">
                                 <img class="nav-logo" src="res/img/logo.png" alt="">
-                                <span class="brand-content">BIOCOM SRM</span>
                             </a>
                         </figure>
                     </div>
@@ -500,22 +512,25 @@
                                     <a class="nav-link" href="#home"><i class="fas fa-home"></i>&nbsp;Home</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fas fa-users"></i>&nbsp;Team</a>
+                                    <a class="nav-link" href="#aboutus"><i class="fas fa-info"></i>&nbsp;About Us</a>
                                   </li>
                                   <li class="nav-item">
                                     <a class="nav-link" href="#domains"><i class="fas fa-dna"></i>&nbsp;Domains</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#aboutus"><i class="fas fa-info"></i>&nbsp;About Us</a>
+                                    <a class="nav-link" href="#team"><i class="fas fa-users"></i>&nbsp;Team</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#testimonial"><i class="fas fa-newspaper"></i>&nbsp;Our Articles</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#contact"><i class="fas fa-address-card"></i>&nbsp;Contact Us</a>
                                   </li>
                                 </ul>
                             </div>
                         </nav>
                     </div>
-                    <div class="contact-btn">
-                        <div class="nav-link">
-                            <a href="#contact" class="cbtn">Contact Us</a>
-                        </div>
+                    <div class="contact-btn" style="width: 50px;">
                     </div>
                 </div>
             </div>
@@ -526,7 +541,6 @@
                     <figure class="brand">
                         <a href="#">
                             <img class="nav-logo" src="res/img/logo.png" alt="">
-                            <span class="brand-content">BIOCOM SRM</span>
                         </a>
                     </figure>
                 </div>
@@ -543,16 +557,19 @@
                                 <a class="nav-link" href="#home"><i class="fas fa-home"></i>&nbsp;Home</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-users"></i>&nbsp;Team</a>
+                                <a class="nav-link" href="#aboutus"><i class="fas fa-info"></i>&nbsp;About Us</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="#domains"><i class="fas fa-dna"></i>&nbsp;Domains</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#aboutus"><i class="fas fa-info"></i>&nbsp;About Us</a>
+                                <a class="nav-link" href="#team"><i class="fas fa-users"></i>&nbsp;Team</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#contact"><i class="fas fa-info"></i>&nbsp;Contact Us</a>
+                                <a class="nav-link" href="#testimonial"><i class="fas fa-newspaper"></i>&nbsp;Our Articles</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#contact"><i class="fas fa-address-card"></i>&nbsp;Contact Us</a>
                               </li>
                             </ul>
                         </div>
@@ -597,7 +614,7 @@
                         <div style="height: 100vh; background-image: url(img1/laboratory.jpg); background-repeat: no-repeat; background-size: cover; background-position: right;">
                             <div class="drop-div d-flex justify-content-center align-items-center" style="flex-direction: column;">
                                 <span class="flip">Opportunities to Explore Different Domains in Biology.</span>
-                                <span class="drop">Biocom Welcomes You</span>
+                                <span class="drop">BioCom Welcomes You</span>
                             </div>
                         </div>
                       </div>
@@ -834,7 +851,7 @@ Action Box -->
     <canvas id="canvas"></canvas>
     <div class="container">
         <div class="row align-items-center">
-                <h2 class="iq-font-white iq-fw-4 iq-pb-10 text-center">On a road to create a <strong class="iq-font-black">momentum by exploring in the field of Life Sciences </strong> with the assistance  of innovation in every of aspect of life!</h2>
+                <h2 class="iq-font-white iq-fw-4 iq-pb-10 text-center" style="font-family: 'Roboto Mono', monospace;">On a road to create a <strong class="iq-font-black">momentum by exploring in the field of Life Sciences </strong> with the assistance  of innovation in every of aspect of life!</h2>
                 <!-- <div>Lorem Ipsum is simply dummy text ever sincehar the 1500s, when an unknownshil printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
             </div> -->
             <!-- <div class="col-lg-2 col-md-3 text-right"><a href="home-2.html#" class="button white grey iq-re-4-mt30 iq-mr-0">Read More</a> </div> -->
@@ -848,7 +865,7 @@ Action Box -->
 
         <!--=================================
 Team  -->
-        <section class="overview-block-ptb grey-bg">
+        <section class="overview-block-ptb grey-bg" id="team">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
@@ -865,14 +882,14 @@ Team  -->
                         <div class="d-flex"><span style="" class="link-logo"><a href="https://www.facebook.com/musu.sengupta" class=""><i class=" fab fa-facebook-f"></i></a></span><span style="" class="link-logo"><a href="https://www.linkedin.com/mwlite/in/raktima-sengupta-a81135169" class=""><i class="fab fa-linkedin-in"></i></a></span></div>
                     </div>
                     <div class="col-md-3 col-12 d-flex justify-content-center align-items-center my-2" style="width: 200px; flex-direction: column;">
-                        <img src="img1/team/0.jpg" class="images-team" style="" alt="">
-                        <div class="d-flex" style="flex-direction: column; align-items: center; justify-content: center;"><span style="font-weight: 600; font-size: 1.5rem;">Nikunj Panchal</span><span>Coordinator</span></div>
-                        <div class="d-flex"><span style="" class="link-logo"><a href="https://www.facebook.com/inikunjpanchal" class=""><i class=" fab fa-facebook-f"></i></a></span><span style="" class="link-logo"><a href="https://www.linkedin.com/in/nikunj7panchal" class=""><i class="fab fa-linkedin-in"></i></a></span></div>
-                    </div>
-                    <div class="col-md-3 col-12 d-flex justify-content-center align-items-center my-2" style="width: 200px; flex-direction: column;">
                         <img src="img1/team/13.jpeg" class="images-team" style="" alt="">
                         <div class="d-flex" style="flex-direction: column; align-items: center; justify-content: center;"><span style="font-weight: 600; font-size: 1.5rem;">Mukul Khadhe</span><span>Co-Founder</span></div>
                         <div class="d-flex"><span style="" class="link-logo"><a href="https://www.facebook.com/mukul.khadke.18" class=""><i class=" fab fa-facebook-f"></i></a></span><span style="" class="link-logo"><a href="https://www.linkedin.com/in/mukul-khadke" class=""><i class="fab fa-linkedin-in"></i></a></span></div>
+                    </div>
+                    <div class="col-md-3 col-12 d-flex justify-content-center align-items-center my-2" style="width: 200px; flex-direction: column;">
+                        <img src="img1/team/0.jpg" class="images-team" style="" alt="">
+                        <div class="d-flex" style="flex-direction: column; align-items: center; justify-content: center;"><span style="font-weight: 600; font-size: 1.5rem;">Nikunj Panchal</span><span>Coordinator</span></div>
+                        <div class="d-flex"><span style="" class="link-logo"><a href="https://www.facebook.com/inikunjpanchal" class=""><i class=" fab fa-facebook-f"></i></a></span><span style="" class="link-logo"><a href="https://www.linkedin.com/in/nikunj7panchal" class=""><i class="fab fa-linkedin-in"></i></a></span></div>
                     </div>
                     <div class="col-md-3 col-12 d-flex justify-content-center align-items-center my-2" style="width: 200px; flex-direction: column;">
                         <img src="img1/team/3.png" class="images-team" style="" alt="">
@@ -880,75 +897,20 @@ Team  -->
                         <div class="d-flex"><span style="" class="link-logo"><a href="https://www.srmist.edu.in/medicine/translational-medicine-research/faculty/dr-shantanu-patil-0" class=""><i class=" fas fa-info"></i></a></span><span style="" class="link-logo"><a href="https://www.linkedin.com/in/shantanu-patil-2355122/" class=""><i class="fab fa-linkedin-in"></i></a></span></div>
                     </div>
                 </div>
-                <!--
-                    <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="">
-                            <div class="team-images">
-                                <img class="img-fluid" src="img1/team/2.jpeg" alt="Raktima Sengupta" style="width: 254px; height: 283px;">
-                                <div class="team-social">
-                                </div>
-                            </div>
-                            <div class="team-description">
-                                <h6 class="iq-tw-6"><a href="https://www.linkedin.com/mwlite/in/raktima-sengupta-a81135169">Raktima Sengupta</a></h6>
-                                <p>Founder</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="">
-                            <div class="team-images">
-                                <img class="img-fluid" src="img1/team/13.jpeg" alt="Mukul Khadhe" style="width: 254px; height: 283px" >
-                                <div class="team-social">
-                                </div>
-                            </div>
-                            <div class="team-description">
-                                <h6 class="iq-tw-6"><a href="https://www.linkedin.com/in/mukul-khadke">Mukul Khadhe</a></h6>
-                                <p>Co-Founder</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="">
-                            <div class="team-images">
-                                <img class="img-fluid" src="img1/team/3.png" alt="">
-                            </div>
-                            <div class="team-description">
-                                <h6 class="iq-tw-6"><a href="https://www.linkedin.com/in/shantanu-patil-2355122/">Dr. Shantanu Patil</a></h6>
-                                <p>SIIC Head</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="">
-                            <div class="team-images">
-                                <img class="img-fluid" src="img1/team/0.jpg" alt="" style="width: 254px; height: 283px;">
-                                <div class="team-social">
-                                </div>
-                            </div>
-                            <div class="team-description">
-                                <h6 class="iq-tw-6"><a href="https://www.linkedin.com/in/nikunj7panchal">Nikunj Panchal</a></h6>
-                                <p>Coordinator</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                -->
             </div>
         </section>
         <!--=================================
 Team  -->
         <!--================================
 Testimonial -->
-        <section>
+        <section id="testimonial">
         <div class="iq-testimonial2 overview-block-ptb iq-over-black-40 iq-bg jarallax" style="background-image: url('images/bg/36.jpg'); background-position: center center;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                    <h3 class="iq-tw-6 small-title iq-font-white">Our Articles</h3>
+                    <h3 class="iq-tw-6 small-title iq-font-white titlee">Our Articles</h3>
                   <div class="testi-white iq-brd iq-mt-40">
                             <div class="owl-carousel re-inherit" data-autoplay="true" data-loop="true" data-nav="true" data-dots="false" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1">
                                 <div class="item">
@@ -1039,16 +1001,17 @@ Footer-6 -->
                   </div>
                  
                   <div class="col-lg-4 col-md-4 col-sm-6 iq-mtb-20 imp-link">
-                     <h5 class="small-title iq-tw-6 iq-font-white iq-mb-30">Important Links</h5>
+                     <h5 class="small-title iq-tw-6 iq-font-white iq-mb-30 titlee">Important Links</h5>
                      <ul>
                         <li class="d-inline-block iq-font-black iq-mr-10 iq-mb-10"><a href="https://medium.com/biocom-srm-biology-community">Blogs</a></li>
                         <li class="d-inline-block iq-font-black iq-mr-10 iq-mb-10"><a href="#">Seminars</a></li>
                         <li class="d-inline-block iq-font-black iq-mr-10 iq-mb-10"><a href="#">Workshop</a></li>
-
+                        <li class="d-inline-block iq-font-black iq-mr-10 iq-mb-10"><a href="#">Research Papers</a></li>
+                        <li class="d-inline-block iq-font-black iq-mr-10 iq-mb-10"><a href="#">Project</a></li>
                      </ul>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-6 iq-mtb-20 about-us">
-                    <h5 class="small-title iq-tw-6 iq-font-white iq-mb-30">Reach Us</h5>
+                    <h5 class="small-title iq-tw-6 iq-font-white iq-mb-30 titlee">Reach Us</h5>
                     <ul><a href="https://www.google.com/search?q=SIIC+SRM&rlz=1C1CHBD_enIN889IN889&oq=SIIC+SRM&aqs=chrome..69i57.6249j0j7&sourceid=chrome&ie=UTF-8">
                        <li class="iq-font-white iq-mt-15">SRM Incubation & Innovation Center,</li>
                        <li class="iq-font-white iq-mt-15" >SRM Institute Of Science and Technology,</li>
@@ -1074,11 +1037,12 @@ Footer-6 -->
                           <a href="#" class="iq-font-green iq-tw-6">BioCom</a> All Rights Reserved 
                       </div>
                   </div>
-                 
                   <div class="col-lg-6 col-sm-12">
                      <ul class="iq-media-blog">
                         <li><a href="https://www.instagram.com/biocom_srm/"><i class="fab fa-instagram"></i></a></li>
-                         <li><a href="https://m.facebook.com/BioCom-SRM-Biology-Community-113130513495657/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://m.facebook.com/BioCom-SRM-Biology-Community-113130513495657/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/biocom-srm"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://medium.com/biocom-srm-biology-community"><i class="fab fa-medium-m"></i></a></li>
                      </ul>
                   </div>
                </div>
